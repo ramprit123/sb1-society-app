@@ -86,7 +86,7 @@ export default function SplashScreen() {
         </Animated.View>
 
         <Animated.View style={[styles.textContainer, textAnimatedStyle]}>
-          <Text style={styles.title}>MySociety</Text>
+          <Text style={styles.title}>My Society</Text>
           <Text style={styles.subtitle}>Smart Living, Connected Community</Text>
 
           <View style={styles.indicatorContainer}>

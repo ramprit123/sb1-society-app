@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import { Download } from 'lucide-react-native';
 import { colors } from '@/constants/colors';
 import { spacing, borderRadius } from '@/constants/spacing';
@@ -17,7 +24,7 @@ interface PaymentRecord {
 
 export default function PaymentsScreen() {
   const currentPayment = {
-    amount: 245.00,
+    amount: 245.0,
     dueDate: 'April 30, 2024',
   };
 
@@ -76,7 +83,9 @@ export default function PaymentsScreen() {
                     {payment.month} {payment.year}
                   </Text>
                   <Text style={styles.historyDate}>
-                    {payment.status === 'paid' ? `Paid: ${payment.paidDate}` : `Due: ${payment.dueDate}`}
+                    {payment.status === 'paid'
+                      ? `Paid: ${payment.paidDate}`
+                      : `Due: ${payment.dueDate}`}
                   </Text>
                 </View>
 
@@ -85,7 +94,9 @@ export default function PaymentsScreen() {
                   <View style={styles.statusContainer}>
                     <Badge
                       text={payment.status === 'paid' ? 'Paid' : 'Pending'}
-                      variant={payment.status === 'paid' ? 'success' : 'warning'}
+                      variant={
+                        payment.status === 'paid' ? 'success' : 'warning'
+                      }
                     />
                     {payment.status === 'paid' && (
                       <TouchableOpacity style={styles.downloadButton}>
@@ -153,7 +164,7 @@ const styles = StyleSheet.create({
     color: colors.text.inverse,
   },
   historySection: {
-    paddingHorizontal: spacing.md,
+    paddingHorizontal: spacing.lg,
   },
   sectionTitle: {
     fontFamily: 'Poppins-SemiBold',
